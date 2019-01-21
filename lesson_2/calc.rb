@@ -7,19 +7,17 @@
 #
 # Using explicit module references and method call perentheses.
 
-def Calculator(x,y,op)
-  if op == '/'
-    y = y.to_f
-  end
+def calculator(x, y, op)
+  y = y.to_f if op == '/'
   x.method(op).(y)
 end
 
 Kernel.puts("What type of operation would you like to perform? (+, -, *, /)")
 operation = Kernel.gets().chomp()
 
-Kernel.puts("In the example (x #{operation} y) what would you like 'x' to be?")
+Kernel.puts("In the example (x #{operation} y = ?) what would you like 'x' to be?")
 x = Kernel.gets().chomp().to_i()
-Kernel.puts("In the example (x #{operation} y) what would you like 'y' to be?")
+Kernel.puts("In the example (x #{operation} y = ?) what would you like 'y' to be?")
 y = Kernel.gets().chomp().to_i()
 
-Kernel.puts("#{x} #{operation} #{y} = #{Calculator(x,y,operation)}")
+Kernel.puts("#{x} #{operation} #{y} = #{calculator(x, y, operation)}")
