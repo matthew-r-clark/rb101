@@ -39,8 +39,8 @@ loop do
   end
 
   comp = computer_choice
-  prompt "Your choice is #{choices[user-1]}."
-  prompt "Computer's choice is #{choices[comp-1]}."
+  prompt "Your choice is #{choices[user - 1]}."
+  prompt "Computer's choice is #{choices[comp - 1]}."
 
   prompt(display_results(user, comp))
 
